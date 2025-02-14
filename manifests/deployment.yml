@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: app1imageaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1imageaks
+  template:
+    metadata:
+      labels:
+        app: app1imageaks 
+    spec:
+      containers:
+        - name: app1imageaks 
+          image: aksacr101.azurecr.io/app1imageaks
+          ports:
+          - containerPort: 80
